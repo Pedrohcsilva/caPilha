@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,17 +11,54 @@ namespace caPilha
         static void Main(string[] args)
         {
             Pilha p1 = new Pilha();
-            p1.push(3);
-            p1.push(4);
-            p1.push(5);
+            int aux = 1;
+            while (aux != 0)
+            {
+                Console.WriteLine("Escolha uma opção do menu :\n");
+                Console.WriteLine(" [1] - Inserir elemento na pilha");
+                Console.WriteLine(" [2] - Remover elemento da pilha");
+                Console.WriteLine(" [3] - Imprimir todos elementos da pilha");
+                Console.WriteLine(" [4] - Sair");
 
-            p1.imprime();
-            Console.WriteLine("Desempilando o ... " +p1.pop());
+                string op = Console.ReadLine();
 
-            p1.imprime();
+                switch (op)
+                {
+                    case "1":
+                        Console.WriteLine("Entre com um numero que vai ser inserido na pilha");
+                        int n= Convert.ToInt32(Console.ReadLine());
+                        p1.push(n);
+                        Console.Clear();    
+                        break;
 
-            Console.ReadLine();
+                    case "2":
+                        Console.WriteLine("Desempilhando o ..." +p1.pop());
+                        Console.ReadLine();
+                        Console.Clear();
+                        break;
 
+                    case "3":
+                        p1.imprime();
+                        Console.ReadLine();
+                        Console.Clear() ;
+                        break;
+
+                        break;
+
+                    case "4":
+
+                        aux = 0;
+                        Console.Clear();
+                        break;
+
+
+                    default:
+                        Console.Write("Favor selecionar uma das opções mostradas no menu\n");
+                        break;
+                }
+
+
+            }
 
         }
     }
